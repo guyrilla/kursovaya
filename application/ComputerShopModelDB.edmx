@@ -1,0 +1,823 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Хранилище ComputerShopModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Accounts_">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Login" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Password" Type="varbinary(max)" Nullable="false" />
+          <Property Name="Role" Type="int" Nullable="false" />
+          <Property Name="ImagePath" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Baskets_">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ClientID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Baskets_Products">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BasketID" Type="int" Nullable="false" />
+          <Property Name="ProductID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Baskets_Services">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BasketID" Type="int" Nullable="false" />
+          <Property Name="ServiceID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Clients_">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SecondName" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="SurName" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="AccountID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Masters_">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SecondName" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="SurName" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="WorkExperience" Type="tinyint" Nullable="false" />
+          <Property Name="Employment" Type="bit" Nullable="false" />
+          <Property Name="AccountID" Type="int" Nullable="false" />
+          <Property Name="ImagePath" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Masters_Services">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MasterID" Type="int" Nullable="false" />
+          <Property Name="ServiceID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Orders_">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BasketID" Type="int" Nullable="false" />
+          <Property Name="OrderStatus" Type="bit" />
+        </EntityType>
+        <EntityType Name="Products_">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductName" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="ProductCost" Type="int" Nullable="false" />
+          <Property Name="ImagePath" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Roles_">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RoleTitle" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Services_">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ServiceName" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="ServiceCost" Type="int" Nullable="false" />
+          <Property Name="ImagePath" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="FK__Accounts___Role__4D94879B">
+          <End Role="Roles_" Type="Self.Roles_" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Accounts_" Type="Self.Accounts_" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles_">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Accounts_">
+              <PropertyRef Name="Role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Baskets___Client__5812160E">
+          <End Role="Clients_" Type="Self.Clients_" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Baskets_" Type="Self.Baskets_" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients_">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Baskets_">
+              <PropertyRef Name="ClientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Baskets_P__Baske__6C190EBB">
+          <End Role="Baskets_" Type="Self.Baskets_" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Baskets_Products" Type="Self.Baskets_Products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Baskets_">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Baskets_Products">
+              <PropertyRef Name="BasketID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Baskets_P__Produ__6D0D32F4">
+          <End Role="Products_" Type="Self.Products_" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Baskets_Products" Type="Self.Baskets_Products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products_">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Baskets_Products">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Baskets_S__Baske__6754599E">
+          <End Role="Baskets_" Type="Self.Baskets_" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Baskets_Services" Type="Self.Baskets_Services" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Baskets_">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Baskets_Services">
+              <PropertyRef Name="BasketID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Baskets_S__Servi__68487DD7">
+          <End Role="Services_" Type="Self.Services_" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Baskets_Services" Type="Self.Baskets_Services" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Services_">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Baskets_Services">
+              <PropertyRef Name="ServiceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Clients___Accoun__5165187F">
+          <End Role="Accounts_" Type="Self.Accounts_" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Clients_" Type="Self.Clients_" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts_">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Clients_">
+              <PropertyRef Name="AccountID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Masters___Accoun__5535A963">
+          <End Role="Accounts_" Type="Self.Accounts_" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Masters_" Type="Self.Masters_" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts_">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Masters_">
+              <PropertyRef Name="AccountID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Masters_S__Maste__628FA481">
+          <End Role="Masters_" Type="Self.Masters_" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Masters_Services" Type="Self.Masters_Services" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Masters_">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Masters_Services">
+              <PropertyRef Name="MasterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Masters_S__Servi__6383C8BA">
+          <End Role="Services_" Type="Self.Services_" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Masters_Services" Type="Self.Masters_Services" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Services_">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Masters_Services">
+              <PropertyRef Name="ServiceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Orders___BasketI__5AEE82B9">
+          <End Role="Baskets_" Type="Self.Baskets_" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Orders_" Type="Self.Orders_" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Baskets_">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Orders_">
+              <PropertyRef Name="BasketID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище ComputerShopModelContainer">
+          <EntitySet Name="Accounts_" EntityType="Self.Accounts_" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Baskets_" EntityType="Self.Baskets_" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Baskets_Products" EntityType="Self.Baskets_Products" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Baskets_Services" EntityType="Self.Baskets_Services" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Clients_" EntityType="Self.Clients_" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Masters_" EntityType="Self.Masters_" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Masters_Services" EntityType="Self.Masters_Services" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Orders_" EntityType="Self.Orders_" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Products_" EntityType="Self.Products_" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Roles_" EntityType="Self.Roles_" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Services_" EntityType="Self.Services_" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Accounts___Role__4D94879B" Association="Self.FK__Accounts___Role__4D94879B">
+            <End Role="Roles_" EntitySet="Roles_" />
+            <End Role="Accounts_" EntitySet="Accounts_" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Baskets___Client__5812160E" Association="Self.FK__Baskets___Client__5812160E">
+            <End Role="Clients_" EntitySet="Clients_" />
+            <End Role="Baskets_" EntitySet="Baskets_" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Baskets_P__Baske__6C190EBB" Association="Self.FK__Baskets_P__Baske__6C190EBB">
+            <End Role="Baskets_" EntitySet="Baskets_" />
+            <End Role="Baskets_Products" EntitySet="Baskets_Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Baskets_P__Produ__6D0D32F4" Association="Self.FK__Baskets_P__Produ__6D0D32F4">
+            <End Role="Products_" EntitySet="Products_" />
+            <End Role="Baskets_Products" EntitySet="Baskets_Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Baskets_S__Baske__6754599E" Association="Self.FK__Baskets_S__Baske__6754599E">
+            <End Role="Baskets_" EntitySet="Baskets_" />
+            <End Role="Baskets_Services" EntitySet="Baskets_Services" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Baskets_S__Servi__68487DD7" Association="Self.FK__Baskets_S__Servi__68487DD7">
+            <End Role="Services_" EntitySet="Services_" />
+            <End Role="Baskets_Services" EntitySet="Baskets_Services" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Clients___Accoun__5165187F" Association="Self.FK__Clients___Accoun__5165187F">
+            <End Role="Accounts_" EntitySet="Accounts_" />
+            <End Role="Clients_" EntitySet="Clients_" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Masters___Accoun__5535A963" Association="Self.FK__Masters___Accoun__5535A963">
+            <End Role="Accounts_" EntitySet="Accounts_" />
+            <End Role="Masters_" EntitySet="Masters_" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Masters_S__Maste__628FA481" Association="Self.FK__Masters_S__Maste__628FA481">
+            <End Role="Masters_" EntitySet="Masters_" />
+            <End Role="Masters_Services" EntitySet="Masters_Services" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Masters_S__Servi__6383C8BA" Association="Self.FK__Masters_S__Servi__6383C8BA">
+            <End Role="Services_" EntitySet="Services_" />
+            <End Role="Masters_Services" EntitySet="Masters_Services" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Orders___BasketI__5AEE82B9" Association="Self.FK__Orders___BasketI__5AEE82B9">
+            <End Role="Baskets_" EntitySet="Baskets_" />
+            <End Role="Orders_" EntitySet="Orders_" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ComputerShopModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Accounts_">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Login" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="Role" Type="Int32" Nullable="false" />
+          <Property Name="ImagePath" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Roles_" Relationship="Self.FK__Accounts___Role__4D94879B" FromRole="Accounts_" ToRole="Roles_" />
+          <NavigationProperty Name="Clients_" Relationship="Self.FK__Clients___Accoun__5165187F" FromRole="Accounts_" ToRole="Clients_" />
+          <NavigationProperty Name="Masters_" Relationship="Self.FK__Masters___Accoun__5535A963" FromRole="Accounts_" ToRole="Masters_" />
+        </EntityType>
+        <EntityType Name="Baskets_">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ClientID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Clients_" Relationship="Self.FK__Baskets___Client__5812160E" FromRole="Baskets_" ToRole="Clients_" />
+          <NavigationProperty Name="Baskets_Products" Relationship="Self.FK__Baskets_P__Baske__6C190EBB" FromRole="Baskets_" ToRole="Baskets_Products" />
+          <NavigationProperty Name="Baskets_Services" Relationship="Self.FK__Baskets_S__Baske__6754599E" FromRole="Baskets_" ToRole="Baskets_Services" />
+          <NavigationProperty Name="Orders_" Relationship="Self.FK__Orders___BasketI__5AEE82B9" FromRole="Baskets_" ToRole="Orders_" />
+        </EntityType>
+        <EntityType Name="Baskets_Products">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BasketID" Type="Int32" Nullable="false" />
+          <Property Name="ProductID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Baskets_" Relationship="Self.FK__Baskets_P__Baske__6C190EBB" FromRole="Baskets_Products" ToRole="Baskets_" />
+          <NavigationProperty Name="Products_" Relationship="Self.FK__Baskets_P__Produ__6D0D32F4" FromRole="Baskets_Products" ToRole="Products_" />
+        </EntityType>
+        <EntityType Name="Baskets_Services">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BasketID" Type="Int32" Nullable="false" />
+          <Property Name="ServiceID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Baskets_" Relationship="Self.FK__Baskets_S__Baske__6754599E" FromRole="Baskets_Services" ToRole="Baskets_" />
+          <NavigationProperty Name="Services_" Relationship="Self.FK__Baskets_S__Servi__68487DD7" FromRole="Baskets_Services" ToRole="Services_" />
+        </EntityType>
+        <EntityType Name="Clients_">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SecondName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SurName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AccountID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Accounts_" Relationship="Self.FK__Clients___Accoun__5165187F" FromRole="Clients_" ToRole="Accounts_" />
+          <NavigationProperty Name="Baskets_" Relationship="Self.FK__Baskets___Client__5812160E" FromRole="Clients_" ToRole="Baskets_" />
+        </EntityType>
+        <EntityType Name="Masters_">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SecondName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SurName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="WorkExperience" Type="Byte" Nullable="false" />
+          <Property Name="Employment" Type="Boolean" Nullable="false" />
+          <Property Name="AccountID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Accounts_" Relationship="Self.FK__Masters___Accoun__5535A963" FromRole="Masters_" ToRole="Accounts_" />
+          <NavigationProperty Name="Masters_Services" Relationship="Self.FK__Masters_S__Maste__628FA481" FromRole="Masters_" ToRole="Masters_Services" />
+          <Property Name="ImagePath" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Masters_Services">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MasterID" Type="Int32" Nullable="false" />
+          <Property Name="ServiceID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Masters_" Relationship="Self.FK__Masters_S__Maste__628FA481" FromRole="Masters_Services" ToRole="Masters_" />
+          <NavigationProperty Name="Services_" Relationship="Self.FK__Masters_S__Servi__6383C8BA" FromRole="Masters_Services" ToRole="Services_" />
+        </EntityType>
+        <EntityType Name="Orders_">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BasketID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Baskets_" Relationship="Self.FK__Orders___BasketI__5AEE82B9" FromRole="Orders_" ToRole="Baskets_" />
+          <Property Name="OrderStatus" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Products_">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ProductCost" Type="Int32" Nullable="false" />
+          <Property Name="ImagePath" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Baskets_Products" Relationship="Self.FK__Baskets_P__Produ__6D0D32F4" FromRole="Products_" ToRole="Baskets_Products" />
+        </EntityType>
+        <EntityType Name="Roles_">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RoleTitle" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Accounts_" Relationship="Self.FK__Accounts___Role__4D94879B" FromRole="Roles_" ToRole="Accounts_" />
+        </EntityType>
+        <EntityType Name="Services_">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ServiceName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ServiceCost" Type="Int32" Nullable="false" />
+          <Property Name="ImagePath" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Baskets_Services" Relationship="Self.FK__Baskets_S__Servi__68487DD7" FromRole="Services_" ToRole="Baskets_Services" />
+          <NavigationProperty Name="Masters_Services" Relationship="Self.FK__Masters_S__Servi__6383C8BA" FromRole="Services_" ToRole="Masters_Services" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK__Accounts___Role__4D94879B">
+          <End Role="Roles_" Type="Self.Roles_" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Accounts_" Type="Self.Accounts_" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles_">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Accounts_">
+              <PropertyRef Name="Role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Clients___Accoun__5165187F">
+          <End Role="Accounts_" Type="Self.Accounts_" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Clients_" Type="Self.Clients_" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts_">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Clients_">
+              <PropertyRef Name="AccountID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Masters___Accoun__5535A963">
+          <End Role="Accounts_" Type="Self.Accounts_" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Masters_" Type="Self.Masters_" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts_">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Masters_">
+              <PropertyRef Name="AccountID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Baskets___Client__5812160E">
+          <End Role="Clients_" Type="Self.Clients_" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Baskets_" Type="Self.Baskets_" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients_">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Baskets_">
+              <PropertyRef Name="ClientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Baskets_P__Baske__6C190EBB">
+          <End Role="Baskets_" Type="Self.Baskets_" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Baskets_Products" Type="Self.Baskets_Products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Baskets_">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Baskets_Products">
+              <PropertyRef Name="BasketID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Baskets_S__Baske__6754599E">
+          <End Role="Baskets_" Type="Self.Baskets_" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Baskets_Services" Type="Self.Baskets_Services" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Baskets_">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Baskets_Services">
+              <PropertyRef Name="BasketID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Orders___BasketI__5AEE82B9">
+          <End Role="Baskets_" Type="Self.Baskets_" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Orders_" Type="Self.Orders_" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Baskets_">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Orders_">
+              <PropertyRef Name="BasketID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Baskets_P__Produ__6D0D32F4">
+          <End Role="Products_" Type="Self.Products_" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Baskets_Products" Type="Self.Baskets_Products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products_">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Baskets_Products">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Baskets_S__Servi__68487DD7">
+          <End Role="Services_" Type="Self.Services_" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Baskets_Services" Type="Self.Baskets_Services" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Services_">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Baskets_Services">
+              <PropertyRef Name="ServiceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Masters_S__Maste__628FA481">
+          <End Role="Masters_" Type="Self.Masters_" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Masters_Services" Type="Self.Masters_Services" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Masters_">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Masters_Services">
+              <PropertyRef Name="MasterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Masters_S__Servi__6383C8BA">
+          <End Role="Services_" Type="Self.Services_" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Masters_Services" Type="Self.Masters_Services" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Services_">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Masters_Services">
+              <PropertyRef Name="ServiceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ComputerShopEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Accounts_" EntityType="Self.Accounts_" />
+          <EntitySet Name="Baskets_" EntityType="Self.Baskets_" />
+          <EntitySet Name="Baskets_Products" EntityType="Self.Baskets_Products" />
+          <EntitySet Name="Baskets_Services" EntityType="Self.Baskets_Services" />
+          <EntitySet Name="Clients_" EntityType="Self.Clients_" />
+          <EntitySet Name="Masters_" EntityType="Self.Masters_" />
+          <EntitySet Name="Masters_Services" EntityType="Self.Masters_Services" />
+          <EntitySet Name="Orders_" EntityType="Self.Orders_" />
+          <EntitySet Name="Products_" EntityType="Self.Products_" />
+          <EntitySet Name="Roles_" EntityType="Self.Roles_" />
+          <EntitySet Name="Services_" EntityType="Self.Services_" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <AssociationSet Name="FK__Accounts___Role__4D94879B" Association="Self.FK__Accounts___Role__4D94879B">
+            <End Role="Roles_" EntitySet="Roles_" />
+            <End Role="Accounts_" EntitySet="Accounts_" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Clients___Accoun__5165187F" Association="Self.FK__Clients___Accoun__5165187F">
+            <End Role="Accounts_" EntitySet="Accounts_" />
+            <End Role="Clients_" EntitySet="Clients_" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Masters___Accoun__5535A963" Association="Self.FK__Masters___Accoun__5535A963">
+            <End Role="Accounts_" EntitySet="Accounts_" />
+            <End Role="Masters_" EntitySet="Masters_" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Baskets___Client__5812160E" Association="Self.FK__Baskets___Client__5812160E">
+            <End Role="Clients_" EntitySet="Clients_" />
+            <End Role="Baskets_" EntitySet="Baskets_" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Baskets_P__Baske__6C190EBB" Association="Self.FK__Baskets_P__Baske__6C190EBB">
+            <End Role="Baskets_" EntitySet="Baskets_" />
+            <End Role="Baskets_Products" EntitySet="Baskets_Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Baskets_S__Baske__6754599E" Association="Self.FK__Baskets_S__Baske__6754599E">
+            <End Role="Baskets_" EntitySet="Baskets_" />
+            <End Role="Baskets_Services" EntitySet="Baskets_Services" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Orders___BasketI__5AEE82B9" Association="Self.FK__Orders___BasketI__5AEE82B9">
+            <End Role="Baskets_" EntitySet="Baskets_" />
+            <End Role="Orders_" EntitySet="Orders_" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Baskets_P__Produ__6D0D32F4" Association="Self.FK__Baskets_P__Produ__6D0D32F4">
+            <End Role="Products_" EntitySet="Products_" />
+            <End Role="Baskets_Products" EntitySet="Baskets_Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Baskets_S__Servi__68487DD7" Association="Self.FK__Baskets_S__Servi__68487DD7">
+            <End Role="Services_" EntitySet="Services_" />
+            <End Role="Baskets_Services" EntitySet="Baskets_Services" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Masters_S__Maste__628FA481" Association="Self.FK__Masters_S__Maste__628FA481">
+            <End Role="Masters_" EntitySet="Masters_" />
+            <End Role="Masters_Services" EntitySet="Masters_Services" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Masters_S__Servi__6383C8BA" Association="Self.FK__Masters_S__Servi__6383C8BA">
+            <End Role="Services_" EntitySet="Services_" />
+            <End Role="Masters_Services" EntitySet="Masters_Services" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище ComputerShopModelContainer" CdmEntityContainer="ComputerShopEntities">
+          <EntitySetMapping Name="Accounts_">
+            <EntityTypeMapping TypeName="ComputerShopModel.Accounts_">
+              <MappingFragment StoreEntitySet="Accounts_">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Baskets_">
+            <EntityTypeMapping TypeName="ComputerShopModel.Baskets_">
+              <MappingFragment StoreEntitySet="Baskets_">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Baskets_Products">
+            <EntityTypeMapping TypeName="ComputerShopModel.Baskets_Products">
+              <MappingFragment StoreEntitySet="Baskets_Products">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="BasketID" ColumnName="BasketID" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Baskets_Services">
+            <EntityTypeMapping TypeName="ComputerShopModel.Baskets_Services">
+              <MappingFragment StoreEntitySet="Baskets_Services">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="BasketID" ColumnName="BasketID" />
+                <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Clients_">
+            <EntityTypeMapping TypeName="ComputerShopModel.Clients_">
+              <MappingFragment StoreEntitySet="Clients_">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SecondName" ColumnName="SecondName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="SurName" ColumnName="SurName" />
+                <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Masters_">
+            <EntityTypeMapping TypeName="ComputerShopModel.Masters_">
+              <MappingFragment StoreEntitySet="Masters_">
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SecondName" ColumnName="SecondName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="SurName" ColumnName="SurName" />
+                <ScalarProperty Name="WorkExperience" ColumnName="WorkExperience" />
+                <ScalarProperty Name="Employment" ColumnName="Employment" />
+                <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Masters_Services">
+            <EntityTypeMapping TypeName="ComputerShopModel.Masters_Services">
+              <MappingFragment StoreEntitySet="Masters_Services">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="MasterID" ColumnName="MasterID" />
+                <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders_">
+            <EntityTypeMapping TypeName="ComputerShopModel.Orders_">
+              <MappingFragment StoreEntitySet="Orders_">
+                <ScalarProperty Name="OrderStatus" ColumnName="OrderStatus" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="BasketID" ColumnName="BasketID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products_">
+            <EntityTypeMapping TypeName="ComputerShopModel.Products_">
+              <MappingFragment StoreEntitySet="Products_">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="ProductCost" ColumnName="ProductCost" />
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles_">
+            <EntityTypeMapping TypeName="ComputerShopModel.Roles_">
+              <MappingFragment StoreEntitySet="Roles_">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="RoleTitle" ColumnName="RoleTitle" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Services_">
+            <EntityTypeMapping TypeName="ComputerShopModel.Services_">
+              <MappingFragment StoreEntitySet="Services_">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+                <ScalarProperty Name="ServiceCost" ColumnName="ServiceCost" />
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="ComputerShopModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

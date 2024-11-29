@@ -1,0 +1,133 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\\u041A\u043E\u0434\u0438\u043D\u0433\\\u0423\u0447\u0435\u0431\u0430 \u0432 \u043A\u043E\u043B\u043B\u0435\u0434\u0436\u0435\\4 \u043A\u0443\u0440\u0441\\\u043A\u0443\u0440\u0441\u043E\u0432\u0430\u044F \u0448\u0435\u0432\u0446\u043E\u0432\u0430\\\u043C\u043D\u0435\\application\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{04D84236-83F2-455E-8773-D2A9E67F3225}|application\\application.csproj|d:\\\u043A\u043E\u0434\u0438\u043D\u0433\\\u0443\u0447\u0435\u0431\u0430 \u0432 \u043A\u043E\u043B\u043B\u0435\u0434\u0436\u0435\\4 \u043A\u0443\u0440\u0441\\\u043A\u0443\u0440\u0441\u043E\u0432\u0430\u044F \u0448\u0435\u0432\u0446\u043E\u0432\u0430\\\u043C\u043D\u0435\\application\\application\\orderslogpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{04D84236-83F2-455E-8773-D2A9E67F3225}|application\\application.csproj|solutionrelative:application\\orderslogpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04D84236-83F2-455E-8773-D2A9E67F3225}|application\\application.csproj|D:\\\u041A\u043E\u0434\u0438\u043D\u0433\\\u0423\u0447\u0435\u0431\u0430 \u0432 \u043A\u043E\u043B\u043B\u0435\u0434\u0436\u0435\\4 \u043A\u0443\u0440\u0441\\\u043A\u0443\u0440\u0441\u043E\u0432\u0430\u044F \u0448\u0435\u0432\u0446\u043E\u0432\u0430\\\u043C\u043D\u0435\\application\\application\\cartpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{04D84236-83F2-455E-8773-D2A9E67F3225}|application\\application.csproj|solutionrelative:application\\cartpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04D84236-83F2-455E-8773-D2A9E67F3225}|application\\application.csproj|D:\\\u041A\u043E\u0434\u0438\u043D\u0433\\\u0423\u0447\u0435\u0431\u0430 \u0432 \u043A\u043E\u043B\u043B\u0435\u0434\u0436\u0435\\4 \u043A\u0443\u0440\u0441\\\u043A\u0443\u0440\u0441\u043E\u0432\u0430\u044F \u0448\u0435\u0432\u0446\u043E\u0432\u0430\\\u043C\u043D\u0435\\application\\application\\masterspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{04D84236-83F2-455E-8773-D2A9E67F3225}|application\\application.csproj|solutionrelative:application\\masterspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04D84236-83F2-455E-8773-D2A9E67F3225}|application\\application.csproj|D:\\\u041A\u043E\u0434\u0438\u043D\u0433\\\u0423\u0447\u0435\u0431\u0430 \u0432 \u043A\u043E\u043B\u043B\u0435\u0434\u0436\u0435\\4 \u043A\u0443\u0440\u0441\\\u043A\u0443\u0440\u0441\u043E\u0432\u0430\u044F \u0448\u0435\u0432\u0446\u043E\u0432\u0430\\\u043C\u043D\u0435\\application\\application\\productspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{04D84236-83F2-455E-8773-D2A9E67F3225}|application\\application.csproj|solutionrelative:application\\productspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04D84236-83F2-455E-8773-D2A9E67F3225}|application\\application.csproj|D:\\\u041A\u043E\u0434\u0438\u043D\u0433\\\u0423\u0447\u0435\u0431\u0430 \u0432 \u043A\u043E\u043B\u043B\u0435\u0434\u0436\u0435\\4 \u043A\u0443\u0440\u0441\\\u043A\u0443\u0440\u0441\u043E\u0432\u0430\u044F \u0448\u0435\u0432\u0446\u043E\u0432\u0430\\\u043C\u043D\u0435\\application\\application\\servicespage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{04D84236-83F2-455E-8773-D2A9E67F3225}|application\\application.csproj|solutionrelative:application\\servicespage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04D84236-83F2-455E-8773-D2A9E67F3225}|application\\application.csproj|D:\\\u041A\u043E\u0434\u0438\u043D\u0433\\\u0423\u0447\u0435\u0431\u0430 \u0432 \u043A\u043E\u043B\u043B\u0435\u0434\u0436\u0435\\4 \u043A\u0443\u0440\u0441\\\u043A\u0443\u0440\u0441\u043E\u0432\u0430\u044F \u0448\u0435\u0432\u0446\u043E\u0432\u0430\\\u043C\u043D\u0435\\application\\application\\homepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{04D84236-83F2-455E-8773-D2A9E67F3225}|application\\application.csproj|solutionrelative:application\\homepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 618,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "OrdersLogPage.xaml",
+              "DocumentMoniker": "D:\\\u041A\u043E\u0434\u0438\u043D\u0433\\\u0423\u0447\u0435\u0431\u0430 \u0432 \u043A\u043E\u043B\u043B\u0435\u0434\u0436\u0435\\4 \u043A\u0443\u0440\u0441\\\u043A\u0443\u0440\u0441\u043E\u0432\u0430\u044F \u0448\u0435\u0432\u0446\u043E\u0432\u0430\\\u043C\u043D\u0435\\application\\application\\OrdersLogPage.xaml",
+              "RelativeDocumentMoniker": "application\\OrdersLogPage.xaml",
+              "ToolTip": "D:\\\u041A\u043E\u0434\u0438\u043D\u0433\\\u0423\u0447\u0435\u0431\u0430 \u0432 \u043A\u043E\u043B\u043B\u0435\u0434\u0436\u0435\\4 \u043A\u0443\u0440\u0441\\\u043A\u0443\u0440\u0441\u043E\u0432\u0430\u044F \u0448\u0435\u0432\u0446\u043E\u0432\u0430\\\u043C\u043D\u0435\\application\\application\\OrdersLogPage.xaml",
+              "RelativeToolTip": "application\\OrdersLogPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-21T17:03:25.836Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CartPage.xaml",
+              "DocumentMoniker": "D:\\\u041A\u043E\u0434\u0438\u043D\u0433\\\u0423\u0447\u0435\u0431\u0430 \u0432 \u043A\u043E\u043B\u043B\u0435\u0434\u0436\u0435\\4 \u043A\u0443\u0440\u0441\\\u043A\u0443\u0440\u0441\u043E\u0432\u0430\u044F \u0448\u0435\u0432\u0446\u043E\u0432\u0430\\\u043C\u043D\u0435\\application\\application\\CartPage.xaml",
+              "RelativeDocumentMoniker": "application\\CartPage.xaml",
+              "ToolTip": "D:\\\u041A\u043E\u0434\u0438\u043D\u0433\\\u0423\u0447\u0435\u0431\u0430 \u0432 \u043A\u043E\u043B\u043B\u0435\u0434\u0436\u0435\\4 \u043A\u0443\u0440\u0441\\\u043A\u0443\u0440\u0441\u043E\u0432\u0430\u044F \u0448\u0435\u0432\u0446\u043E\u0432\u0430\\\u043C\u043D\u0435\\application\\application\\CartPage.xaml",
+              "RelativeToolTip": "application\\CartPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-21T16:53:49.199Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MastersPage.xaml",
+              "DocumentMoniker": "D:\\\u041A\u043E\u0434\u0438\u043D\u0433\\\u0423\u0447\u0435\u0431\u0430 \u0432 \u043A\u043E\u043B\u043B\u0435\u0434\u0436\u0435\\4 \u043A\u0443\u0440\u0441\\\u043A\u0443\u0440\u0441\u043E\u0432\u0430\u044F \u0448\u0435\u0432\u0446\u043E\u0432\u0430\\\u043C\u043D\u0435\\application\\application\\MastersPage.xaml",
+              "RelativeDocumentMoniker": "application\\MastersPage.xaml",
+              "ToolTip": "D:\\\u041A\u043E\u0434\u0438\u043D\u0433\\\u0423\u0447\u0435\u0431\u0430 \u0432 \u043A\u043E\u043B\u043B\u0435\u0434\u0436\u0435\\4 \u043A\u0443\u0440\u0441\\\u043A\u0443\u0440\u0441\u043E\u0432\u0430\u044F \u0448\u0435\u0432\u0446\u043E\u0432\u0430\\\u043C\u043D\u0435\\application\\application\\MastersPage.xaml",
+              "RelativeToolTip": "application\\MastersPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-21T16:50:06.575Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProductsPage.xaml",
+              "DocumentMoniker": "D:\\\u041A\u043E\u0434\u0438\u043D\u0433\\\u0423\u0447\u0435\u0431\u0430 \u0432 \u043A\u043E\u043B\u043B\u0435\u0434\u0436\u0435\\4 \u043A\u0443\u0440\u0441\\\u043A\u0443\u0440\u0441\u043E\u0432\u0430\u044F \u0448\u0435\u0432\u0446\u043E\u0432\u0430\\\u043C\u043D\u0435\\application\\application\\ProductsPage.xaml",
+              "RelativeDocumentMoniker": "application\\ProductsPage.xaml",
+              "ToolTip": "D:\\\u041A\u043E\u0434\u0438\u043D\u0433\\\u0423\u0447\u0435\u0431\u0430 \u0432 \u043A\u043E\u043B\u043B\u0435\u0434\u0436\u0435\\4 \u043A\u0443\u0440\u0441\\\u043A\u0443\u0440\u0441\u043E\u0432\u0430\u044F \u0448\u0435\u0432\u0446\u043E\u0432\u0430\\\u043C\u043D\u0435\\application\\application\\ProductsPage.xaml",
+              "RelativeToolTip": "application\\ProductsPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-21T16:42:48.495Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ServicesPage.xaml",
+              "DocumentMoniker": "D:\\\u041A\u043E\u0434\u0438\u043D\u0433\\\u0423\u0447\u0435\u0431\u0430 \u0432 \u043A\u043E\u043B\u043B\u0435\u0434\u0436\u0435\\4 \u043A\u0443\u0440\u0441\\\u043A\u0443\u0440\u0441\u043E\u0432\u0430\u044F \u0448\u0435\u0432\u0446\u043E\u0432\u0430\\\u043C\u043D\u0435\\application\\application\\ServicesPage.xaml",
+              "RelativeDocumentMoniker": "application\\ServicesPage.xaml",
+              "ToolTip": "D:\\\u041A\u043E\u0434\u0438\u043D\u0433\\\u0423\u0447\u0435\u0431\u0430 \u0432 \u043A\u043E\u043B\u043B\u0435\u0434\u0436\u0435\\4 \u043A\u0443\u0440\u0441\\\u043A\u0443\u0440\u0441\u043E\u0432\u0430\u044F \u0448\u0435\u0432\u0446\u043E\u0432\u0430\\\u043C\u043D\u0435\\application\\application\\ServicesPage.xaml",
+              "RelativeToolTip": "application\\ServicesPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-21T16:38:42.975Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "HomePage.xaml",
+              "DocumentMoniker": "D:\\\u041A\u043E\u0434\u0438\u043D\u0433\\\u0423\u0447\u0435\u0431\u0430 \u0432 \u043A\u043E\u043B\u043B\u0435\u0434\u0436\u0435\\4 \u043A\u0443\u0440\u0441\\\u043A\u0443\u0440\u0441\u043E\u0432\u0430\u044F \u0448\u0435\u0432\u0446\u043E\u0432\u0430\\\u043C\u043D\u0435\\application\\application\\HomePage.xaml",
+              "RelativeDocumentMoniker": "application\\HomePage.xaml",
+              "ToolTip": "D:\\\u041A\u043E\u0434\u0438\u043D\u0433\\\u0423\u0447\u0435\u0431\u0430 \u0432 \u043A\u043E\u043B\u043B\u0435\u0434\u0436\u0435\\4 \u043A\u0443\u0440\u0441\\\u043A\u0443\u0440\u0441\u043E\u0432\u0430\u044F \u0448\u0435\u0432\u0446\u043E\u0432\u0430\\\u043C\u043D\u0435\\application\\application\\HomePage.xaml",
+              "RelativeToolTip": "application\\HomePage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-21T16:25:08.13Z"
+            }
+          ]
+        },
+        {
+          "DockedHeight": 42,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

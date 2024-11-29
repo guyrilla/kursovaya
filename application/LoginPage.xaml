@@ -1,0 +1,76 @@
+﻿<Page x:Class="application.LoginPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:application"
+      mc:Ignorable="d">
+    
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="300">
+            <TextBlock Text="Вход" FontSize="24" Foreground="White" Margin="0,0,0,20" HorizontalAlignment="Center"/>
+
+            <Grid Margin="0,0,0,10">
+                <TextBox x:Name="EmailTextBox" 
+                         Width="Auto" 
+                         Height="30" 
+                         Background="#2c2a2c" 
+                         Foreground="White" 
+                         BorderBrush="#444" 
+                         BorderThickness="1"
+                         Margin="0,0,0,0"
+                         VerticalContentAlignment="Center"
+                         HorizontalContentAlignment="Center"
+                         GotFocus="Field_GotFocus"
+                         LostFocus="Field_LostFocus"/>
+                <TextBlock x:Name="EmailPlaceHolder"
+                           Text="Логин/Email" 
+                           Foreground="Gray"
+                           IsHitTestVisible="False"
+                           VerticalAlignment="Center" 
+                           Margin="5,0,0,0"/>
+            </Grid>
+
+            <Grid Margin="0,0,0,20">
+                <PasswordBox x:Name="PasswordBox" 
+                             Width="Auto" 
+                             Height="30" 
+                             Background="#2c2a2c" 
+                             Foreground="White" 
+                             BorderBrush="#444" 
+                             BorderThickness="1"
+                             VerticalContentAlignment="Center"
+                             HorizontalContentAlignment="Center"
+                             GotFocus="Field_GotFocus"
+                             LostFocus="Field_LostFocus"/>
+                <TextBlock x:Name="PasswordPlaceHolder"
+                           Text="Пароль" 
+                           Foreground="Gray"
+                           IsHitTestVisible="False"
+                           VerticalAlignment="Center" 
+                           Margin="5,0,0,0"/>
+            </Grid>
+
+            <Button x:Name="LoginButton" 
+                    Content="Войти" 
+                    Width="Auto" 
+                    Background="#FF6A00" 
+                    Foreground="White" 
+                    BorderThickness="0" 
+                    Padding="10" 
+                    Margin="0,0,0,10"
+                    Cursor="Hand" 
+                    FontWeight="Bold"
+                    Click="LoginButton_Click"/>
+
+            <TextBlock Text="Нет аккаунта? Зарегистрируйтесь!" 
+                       Foreground="White" 
+                       HorizontalAlignment="Center" 
+                       Margin="0,10,0,0" 
+                       FontSize="12" 
+                       Cursor="Hand"
+                       MouseDown="RegistrationButton_Click">
+            </TextBlock>
+        </StackPanel>
+    </Grid>
+</Page>

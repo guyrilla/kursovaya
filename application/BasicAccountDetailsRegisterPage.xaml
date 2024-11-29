@@ -1,0 +1,88 @@
+﻿<Page x:Class="application.BasicAccountDetailsRegisterPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:application"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="BasicAccountDetailsRegisterPage">
+
+    <Grid>
+        <Border>
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="300">
+                <TextBlock Text="Регистрация" FontSize="24" Foreground="White" Margin="0,0,0,20" HorizontalAlignment="Center"/>
+
+                <Grid Margin="0,0,0,10">
+                    <Grid>
+                        <Border BorderBrush="#444" BorderThickness="1" CornerRadius="5" Background="#2c2a2c">
+                            <TextBox x:Name="EmailTextBox" 
+                                     Width="Auto" 
+                                     Height="30" 
+                                     Background="Transparent" 
+                                     Foreground="White"
+                                     GotFocus="Field_GotFocus"
+                                     LostFocus="Field_LostFocus"/>
+                        </Border>
+                        <TextBlock x:Name="EmailPlaceHolder" Text="Email" Foreground="Gray" VerticalAlignment="Center" Margin="5,0,0,0" IsHitTestVisible="False"/>
+                    </Grid>
+                </Grid>
+
+                <Grid Margin="0,0,0,10">
+                    <Grid>
+                        <Border BorderBrush="#444" BorderThickness="1" CornerRadius="5" Background="#2c2a2c">
+                            <TextBox x:Name="LoginTextBox" 
+                                     Width="Auto" 
+                                     Height="30" 
+                                     Background="Transparent" 
+                                     Foreground="White"
+                                     GotFocus="Field_GotFocus"
+                                     LostFocus="Field_LostFocus"/>
+                        </Border>
+                        <TextBlock x:Name="LoginPlaceHolder" Text="Логин" Foreground="Gray" VerticalAlignment="Center" Margin="5,0,0,0" IsHitTestVisible="False"/>
+                    </Grid>
+                </Grid>
+
+                <Grid Margin="0,0,0,20">
+                    <Grid>
+                        <Border BorderBrush="#444" BorderThickness="1" CornerRadius="5" Background="#2c2a2c">
+                            <PasswordBox x:Name="PasswordTextBox" 
+                                         Width="Auto" 
+                                         Height="30" 
+                                         Background="Transparent" 
+                                         Foreground="White"
+                                         GotFocus="Field_GotFocus"
+                                         LostFocus="Field_LostFocus"/>
+                        </Border>
+                        <TextBlock x:Name="PasswordPlaceHolder" Text="Пароль" Foreground="Gray" VerticalAlignment="Center" Margin="5,0,0,0" IsHitTestVisible="False"/>
+                    </Grid>
+                </Grid>
+
+                <Button x:Name="NextButton" 
+                        Content="Далее" 
+                        Width="Auto" 
+                        Background="#FF6A00" 
+                        Foreground="White" 
+                        BorderThickness="0" 
+                        Padding="10" 
+                        Margin="0,0,0,10"
+                        Cursor="Hand" 
+                        FontWeight="Bold"
+                        Click="NextButton_Click"/>
+
+                <TextBlock x:Name="LoginTextBlock"
+                           Text="Уже есть аккаунт? Войти!" 
+                           Foreground="White" 
+                           HorizontalAlignment="Center" 
+                           Margin="0,10,0,0" 
+                           FontSize="12" 
+                           Cursor="Hand"
+                           MouseDown="LoginButton_Click">
+                    <TextBlock.InputBindings>
+                        <MouseBinding Gesture="LeftClick" Command="{Binding LoginCommand}"/>
+                    </TextBlock.InputBindings>
+                </TextBlock>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Page>

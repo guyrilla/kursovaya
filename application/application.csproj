@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{04D84236-83F2-455E-8773-D2A9E67F3225}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>application</RootNamespace>
+    <AssemblyName>application</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Accounts_.cs">
+      <DependentUpon>ComputerShopModelDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BasicAccountDetailsRegisterPage.xaml.cs">
+      <DependentUpon>BasicAccountDetailsRegisterPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Baskets_.cs">
+      <DependentUpon>ComputerShopModelDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Baskets_Products.cs">
+      <DependentUpon>ComputerShopModelDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Baskets_Services.cs">
+      <DependentUpon>ComputerShopModelDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CartPage.xaml.cs">
+      <DependentUpon>CartPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Clients_.cs">
+      <DependentUpon>ComputerShopModelDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ComputerShopModelDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ComputerShopModelDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ComputerShopModelDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ComputerShopModelDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ComputerShopModelDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ComputerShopModelDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="CurrentUser.cs" />
+    <Compile Include="CustomBasketProducts.cs" />
+    <Compile Include="CustomBasketServices.cs" />
+    <Compile Include="CustomClient.cs" />
+    <Compile Include="CustomMaster.cs" />
+    <Compile Include="CustomMessageBox.xaml.cs">
+      <DependentUpon>CustomMessageBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomProduct.cs" />
+    <Compile Include="CustomService.cs" />
+    <Compile Include="EditWindow.xaml.cs">
+      <DependentUpon>EditWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FieldValidator.cs" />
+    <Compile Include="HomePage.xaml.cs">
+      <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HomeWindow.xaml.cs">
+      <DependentUpon>HomeWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IBasketElement.cs" />
+    <Compile Include="IEntityEdit.cs" />
+    <Compile Include="IEntityRegister.cs" />
+    <Compile Include="IMasterEdit.cs" />
+    <Compile Include="IPriceableEntityEdit.cs" />
+    <Compile Include="LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MastersPage.xaml.cs">
+      <DependentUpon>MastersPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Masters_.cs">
+      <DependentUpon>ComputerShopModelDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Masters_Services.cs">
+      <DependentUpon>ComputerShopModelDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrdersLogPage.xaml.cs">
+      <DependentUpon>OrdersLogPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Orders_.cs">
+      <DependentUpon>ComputerShopModelDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderViewModel.cs" />
+    <Compile Include="ProductsPage.xaml.cs">
+      <DependentUpon>ProductsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Products_.cs">
+      <DependentUpon>ComputerShopModelDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Roles_.cs">
+      <DependentUpon>ComputerShopModelDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecondaryAccountDetailsRegisterPage.xaml.cs">
+      <DependentUpon>SecondaryAccountDetailsRegisterPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ServicesPage.xaml.cs">
+      <DependentUpon>ServicesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Services_.cs">
+      <DependentUpon>ComputerShopModelDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>ComputerShopModelDB.tt</DependentUpon>
+    </Compile>
+    <Page Include="BasicAccountDetailsRegisterPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CartPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomMessageBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HomeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="MastersPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OrdersLogPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProductsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SecondaryAccountDetailsRegisterPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ServicesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EntityDeploy Include="ComputerShopModelDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ComputerShopModelDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ComputerShopModelDB.edmx.diagram">
+      <DependentUpon>ComputerShopModelDB.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\images\homepageimage3.jpg" />
+    <Resource Include="Resources\images\homepageimage2.png" />
+    <Resource Include="Resources\images\homepageimage1.png" />
+    <Resource Include="Resources\icons\shopping_cart.png" />
+    <Resource Include="Resources\icons\person.png" />
+    <Resource Include="Resources\icons\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ComputerShopModelDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ComputerShopModelDB.edmx</DependentUpon>
+      <LastGenOutput>ComputerShopModelDB.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ComputerShopModelDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ComputerShopModelDB.edmx</DependentUpon>
+      <LastGenOutput>ComputerShopModelDB.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
